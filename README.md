@@ -8,8 +8,8 @@ This repository contains Homebrew formulae and release assets for installing run
 
 | Binary | Current version | Purpose |
 | --- | --- | --- |
-| `api-pilot-runner` | `1.0.6` | Local HTTP runner for executing API requests from Collections against localhost, VPN, or private networks. |
-| `api-pilot-test-runner` | `1.1.0` | Local browser runner for sequential TestPilot case and suite execution. Requires Node.js and Playwright browser dependencies. |
+| `api-pilot-runner` | `1.1.0` | Local HTTP runner for executing API requests from Collections against localhost, VPN, or private networks. |
+| `api-pilot-test-runner` | `1.2.0` | Local browser runner for sequential TestPilot case and suite execution. Requires Node.js and Playwright browser dependencies. |
 
 ## API Base URL
 
@@ -59,7 +59,7 @@ brew install api-pilot-test-runner
 api-pilot-test-runner version
 ```
 
-The formula automatically selects the macOS Apple Silicon (`arm64`) or Intel (`amd64`) release and installs Node dependencies plus Chromium through Playwright. Pair the runner before running `doctor`, because the diagnostic now validates the credential file and API URL in addition to Node, Playwright, Chromium, architecture, permissions, and capabilities. TestPilot requires runner version `1.1.0` or newer.
+The formula automatically selects the macOS Apple Silicon (`arm64`) or Intel (`amd64`) release and installs Node dependencies plus Chromium through Playwright. Pair the runner before running `doctor`, because the diagnostic now validates the credential file and API URL in addition to Node, Playwright, Chromium, architecture, permissions, and capabilities. TestPilot requires runner version `1.2.0` or newer.
 
 ### Upgrade On macOS
 
@@ -86,7 +86,7 @@ Windows binaries are distributed as `.zip` files in GitHub Releases.
 ### Install The HTTP Runner
 
 1. Download:
-   - [api-pilot-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.0.6/api-pilot-runner-windows-amd64.zip)
+   - [api-pilot-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.1.0/api-pilot-runner-windows-amd64.zip)
 2. Extract the zip.
 3. Move `api-pilot-runner.exe` to a permanent folder, for example:
 
@@ -103,7 +103,7 @@ Windows binaries are distributed as `.zip` files in GitHub Releases.
 
 ### Install The TestPilot Browser Runner
 
-The current supported TestPilot runner release is distributed for macOS through Homebrew. Windows packaging remains unavailable for version `1.1.0`; do not install the legacy `1.0.3` binary because the API rejects it with an actionable upgrade error.
+The current supported TestPilot runner release is distributed for macOS through Homebrew. Windows packaging remains unavailable for version `1.2.0`; do not install the legacy `1.0.3` binary because the API rejects it with an actionable upgrade error.
 
 ## Linux Manual Install
 
@@ -113,7 +113,7 @@ Linux binaries are distributed as `.tar.gz` files in GitHub Releases.
 
 ```bash
 curl -L -o api-pilot-runner-linux-amd64.tar.gz \
-  https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.0.6/api-pilot-runner-linux-amd64.tar.gz
+  https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.1.0/api-pilot-runner-linux-amd64.tar.gz
 
 tar -xzf api-pilot-runner-linux-amd64.tar.gz
 chmod +x api-pilot-runner
@@ -124,7 +124,7 @@ api-pilot-runner version
 
 ### Install The TestPilot Browser Runner
 
-The current supported TestPilot runner release is distributed for macOS through Homebrew. Linux packaging remains unavailable for version `1.1.0`; do not install the legacy `1.0.3` binary because the API rejects it with an actionable upgrade error.
+The current supported TestPilot runner release is distributed for macOS through Homebrew. Linux packaging remains unavailable for version `1.2.0`; do not install the legacy `1.0.3` binary because the API rejects it with an actionable upgrade error.
 
 ## Pair A Runner
 
@@ -232,21 +232,21 @@ Use a local runner for:
 
 ## Release Assets
 
-### `api-pilot-test-runner-v1.1.0`
+### `api-pilot-test-runner-v1.2.0`
 
 | Platform | Asset |
 | --- | --- |
-| macOS Apple Silicon | [api-pilot-test-runner-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v1.1.0/api-pilot-test-runner-mac-arm64.tar.gz) |
-| macOS Intel | [api-pilot-test-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v1.1.0/api-pilot-test-runner-mac-amd64.tar.gz) |
+| macOS Apple Silicon | [api-pilot-test-runner-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v1.2.0/api-pilot-test-runner-mac-arm64.tar.gz) |
+| macOS Intel | [api-pilot-test-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v1.2.0/api-pilot-test-runner-mac-amd64.tar.gz) |
 
-### `api-pilot-runner-v1.0.6`
+### `api-pilot-runner-v1.1.0`
 
 | Platform | Asset |
 | --- | --- |
-| macOS Apple Silicon | [api-pilot-runner-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.0.6/api-pilot-runner-mac-arm64.tar.gz) |
-| macOS Intel | [api-pilot-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.0.6/api-pilot-runner-mac-amd64.tar.gz) |
-| Windows x64 | [api-pilot-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.0.6/api-pilot-runner-windows-amd64.zip) |
-| Linux x64 | [api-pilot-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.0.6/api-pilot-runner-linux-amd64.tar.gz) |
+| macOS Apple Silicon | [api-pilot-runner-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.1.0/api-pilot-runner-mac-arm64.tar.gz) |
+| macOS Intel | [api-pilot-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.1.0/api-pilot-runner-mac-amd64.tar.gz) |
+| Windows x64 | [api-pilot-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.1.0/api-pilot-runner-windows-amd64.zip) |
+| Linux x64 | [api-pilot-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.1.0/api-pilot-runner-linux-amd64.tar.gz) |
 
 ### `api-pilot-test-runner-v1.0.3`
 
