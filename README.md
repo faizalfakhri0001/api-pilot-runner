@@ -9,7 +9,7 @@ This repository contains Homebrew formulae and release assets for installing run
 | Binary | Current version | Purpose |
 | --- | --- | --- |
 | `api-pilot-runner` | `1.1.0` | Local HTTP runner for executing API requests from Collections against localhost, VPN, or private networks. |
-| `api-pilot-test-runner` | `1.2.0` | Local browser runner for sequential TestPilot case and suite execution. Requires Node.js and Playwright browser dependencies. |
+| `api-pilot-test-runner` | `2.0.0` | Local browser runner for sequential TestPilot execution with advanced interaction, state, network, and bounded control-flow steps. Requires Node.js and Playwright browser dependencies. |
 
 ## API Base URL
 
@@ -59,7 +59,7 @@ brew install api-pilot-test-runner
 api-pilot-test-runner version
 ```
 
-The formula automatically selects the macOS Apple Silicon (`arm64`) or Intel (`amd64`) release and installs Node dependencies plus Chromium through Playwright. Pair the runner before running `doctor`, because the diagnostic now validates the credential file and API URL in addition to Node, Playwright, Chromium, architecture, permissions, and capabilities. TestPilot requires runner version `1.2.0` or newer.
+The formula automatically selects the macOS Apple Silicon (`arm64`) or Intel (`amd64`) release and installs Node dependencies plus Chromium through Playwright. Pair the runner before running `doctor`, because the diagnostic validates the credential file and API URL in addition to Node, Playwright, Chromium, architecture, permissions, and capabilities. Advanced TestPilot DSL v2 requires runner version `2.0.0` or newer.
 
 ### Upgrade On macOS
 
@@ -103,7 +103,7 @@ Windows binaries are distributed as `.zip` files in GitHub Releases.
 
 ### Install The TestPilot Browser Runner
 
-The current supported TestPilot runner release is distributed for macOS through Homebrew. Windows packaging remains unavailable for version `1.2.0`; do not install the legacy `1.0.3` binary because the API rejects it with an actionable upgrade error.
+The current supported TestPilot runner release is distributed for macOS through Homebrew. Windows packaging remains unavailable for version `2.0.0`; do not install legacy binaries because DSL v2 jobs require explicit runner capabilities.
 
 ## Linux Manual Install
 
@@ -124,7 +124,7 @@ api-pilot-runner version
 
 ### Install The TestPilot Browser Runner
 
-The current supported TestPilot runner release is distributed for macOS through Homebrew. Linux packaging remains unavailable for version `1.2.0`; do not install the legacy `1.0.3` binary because the API rejects it with an actionable upgrade error.
+The current supported TestPilot runner release is distributed for macOS through Homebrew. Linux packaging remains unavailable for version `2.0.0`; do not install legacy binaries because DSL v2 jobs require explicit runner capabilities.
 
 ## Pair A Runner
 
