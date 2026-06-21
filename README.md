@@ -10,6 +10,7 @@ This repository contains Homebrew formulae and release assets for installing run
 | --- | --- | --- |
 | `api-pilot-runner` | `1.2.0` | Local HTTP runner with `runner.control.v2` WebSocket transport and long-poll fallback for localhost, VPN, or private-network execution. |
 | `api-pilot-test-runner` | `2.3.0` | Local browser runner with resumable `runner.control.v2`, isolated parallel suite execution, deterministic ordered results, fail-fast support, sequential fallback, and opt-in video/trace capture. Requires Node.js and Playwright browser dependencies. |
+| `api-pilot-test-mobile-runner` | `0.1.0` | Appium 3 native Android/iOS runner for `testpilot.mobile.v1`. Requires a connected device or emulator plus platform tooling. |
 
 ## API Base URL
 
@@ -61,12 +62,25 @@ api-pilot-test-runner version
 
 The formula automatically selects the macOS Apple Silicon (`arm64`) or Intel (`amd64`) release and installs Node dependencies plus Chromium through Playwright. Pair the runner before running `doctor`, because the diagnostic validates the credential file and API URL in addition to Node, Playwright, Chromium, architecture, permissions, and capabilities. Advanced TestPilot DSL v2 requires runner version `2.0.0` or newer.
 
+### Install The TestPilot Native Mobile Runner
+
+```bash
+brew tap faizalfakhri0001/api-pilot-runner https://github.com/faizalfakhri0001/api-pilot-runner.git
+brew install api-pilot-test-mobile-runner
+api-pilot-test-mobile-runner version
+```
+
+The formula installs Appium `3.5.2`, UiAutomator2 `7.6.2`, and XCUITest `11.13.0`.
+Android requires the Android SDK and `adb`. iOS requires macOS, Xcode, WebDriverAgent
+prerequisites, and a valid signing policy.
+
 ### Upgrade On macOS
 
 ```bash
 brew update
 brew upgrade api-pilot-runner
 brew upgrade api-pilot-test-runner
+brew upgrade api-pilot-test-mobile-runner
 ```
 
 If Homebrew keeps an old tap cache, reset the tap:
@@ -184,6 +198,14 @@ api-pilot-test-runner pair <PAIRING_TOKEN>
 api-pilot-test-runner doctor
 ```
 
+For TestPilot native mobile runner:
+
+```bash
+export API_PILOT_BASE_URL="<API_PILOT_API_BASE_URL>"
+api-pilot-test-mobile-runner pair <PAIRING_TOKEN>
+api-pilot-test-mobile-runner doctor --json
+```
+
 On Windows PowerShell:
 
 ```powershell
@@ -213,6 +235,13 @@ Start the TestPilot browser runner:
 ```bash
 export API_PILOT_BASE_URL="<API_PILOT_API_BASE_URL>"
 api-pilot-test-runner start
+```
+
+Start the TestPilot native mobile runner:
+
+```bash
+export API_PILOT_BASE_URL="<API_PILOT_API_BASE_URL>"
+api-pilot-test-mobile-runner start
 ```
 
 Windows PowerShell:
@@ -265,6 +294,13 @@ Use a local runner for:
 
 4. In TestPilot, select an online local runner with TestPilot Web capability.
 
+## Use The TestPilot Native Mobile Runner
+
+1. Connect an Android device/emulator, or start an iOS simulator on macOS.
+2. Run `api-pilot-test-mobile-runner doctor --json`.
+3. Start the runner with `api-pilot-test-mobile-runner start`.
+4. In TestPilot Native Mobile, select a compatible online device.
+
 ## Release Assets
 
 ### `api-pilot-runner-v1.2.0`
@@ -284,6 +320,13 @@ Use a local runner for:
 | macOS Intel | [api-pilot-test-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-mac-amd64.tar.gz) |
 | Windows x64 | [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-windows-amd64.zip) |
 | Linux x64 | [api-pilot-test-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-linux-amd64.tar.gz) |
+
+### `api-pilot-test-mobile-runner-v0.1.0`
+
+| Platform | Asset |
+| --- | --- |
+| macOS Apple Silicon | [api-pilot-test-mobile-runner-0.1.0-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.1.0/api-pilot-test-mobile-runner-0.1.0-mac-arm64.tar.gz) |
+| macOS Intel | [api-pilot-test-mobile-runner-0.1.0-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.1.0/api-pilot-test-mobile-runner-0.1.0-mac-amd64.tar.gz) |
 
 ### `api-pilot-test-runner-v2.2.0`
 
@@ -416,6 +459,7 @@ Then create a new pairing token and run `pair` again.
 ```text
 Formula/
   api-pilot-runner.rb
+  api-pilot-test-mobile-runner.rb
   api-pilot-test-runner.rb
 README.md
 ```
