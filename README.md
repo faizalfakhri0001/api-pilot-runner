@@ -9,7 +9,7 @@ This repository contains Homebrew formulae and release assets for installing run
 | Binary | Current version | Purpose |
 | --- | --- | --- |
 | `api-pilot-runner` | `1.2.0` | Local HTTP runner with `runner.control.v2` WebSocket transport and long-poll fallback for localhost, VPN, or private-network execution. |
-| `api-pilot-test-runner` | `2.2.0` | Local browser runner with resumable `runner.control.v2`, sequential TestPilot execution, and opt-in video/trace capture. Requires Node.js and Playwright browser dependencies. |
+| `api-pilot-test-runner` | `2.3.0` | Local browser runner with resumable `runner.control.v2`, isolated parallel suite execution, deterministic ordered results, fail-fast support, sequential fallback, and opt-in video/trace capture. Requires Node.js and Playwright browser dependencies. |
 
 ## API Base URL
 
@@ -104,7 +104,7 @@ Windows binaries are distributed as `.zip` files in GitHub Releases.
 ### Install The TestPilot Browser Runner
 
 1. Install Node.js 20 or newer.
-2. Download and extract [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.2.0/api-pilot-test-runner-windows-amd64.zip).
+2. Download and extract [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-windows-amd64.zip).
 3. Keep `api-pilot-test-runner.exe` beside the extracted `worker` directory.
 4. Install the worker dependencies from PowerShell:
 
@@ -137,7 +137,7 @@ api-pilot-runner version
 
 ```bash
 curl -L -o api-pilot-test-runner-linux-amd64.tar.gz \
-  https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.2.0/api-pilot-test-runner-linux-amd64.tar.gz
+  https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-linux-amd64.tar.gz
 
 mkdir -p "$HOME/.local/lib/api-pilot-test-runner"
 tar -xzf api-pilot-test-runner-linux-amd64.tar.gz \
@@ -224,7 +224,7 @@ api-pilot-test-runner start
 
 Leave the runner process open while executing requests or tests.
 
-Runner 1.2.0 and TestPilot runner 2.2.0 prefer the versioned WebSocket control protocol when the
+Runner 1.2.0 and TestPilot runner 2.3.0 prefer the versioned WebSocket control protocol when the
 server enables it, then fall back to long polling if the network or server does not support the
 upgrade. To force compatibility mode:
 
@@ -275,6 +275,15 @@ Use a local runner for:
 | macOS Intel | [api-pilot-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.2.0/api-pilot-runner-mac-amd64.tar.gz) |
 | Windows x64 | [api-pilot-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.2.0/api-pilot-runner-windows-amd64.zip) |
 | Linux x64 | [api-pilot-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.2.0/api-pilot-runner-linux-amd64.tar.gz) |
+
+### `api-pilot-test-runner-v2.3.0`
+
+| Platform | Asset |
+| --- | --- |
+| macOS Apple Silicon | [api-pilot-test-runner-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-mac-arm64.tar.gz) |
+| macOS Intel | [api-pilot-test-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-mac-amd64.tar.gz) |
+| Windows x64 | [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-windows-amd64.zip) |
+| Linux x64 | [api-pilot-test-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-linux-amd64.tar.gz) |
 
 ### `api-pilot-test-runner-v2.2.0`
 
