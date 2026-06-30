@@ -10,7 +10,7 @@ This repository contains Homebrew formulae and release assets for installing run
 | --- | --- | --- |
 | `api-pilot-runner` | `1.2.0` | Local HTTP runner with `runner.control.v2` WebSocket transport and long-poll fallback for localhost, VPN, or private-network execution. |
 | `api-pilot-test-runner` | `2.3.0` | Local browser runner with resumable `runner.control.v2`, isolated parallel suite execution, deterministic ordered results, fail-fast support, sequential fallback, and opt-in video/trace capture. Requires Node.js and Playwright browser dependencies. |
-| `api-pilot-test-mobile-runner` | `0.1.0` | Appium 3 native Android/iOS runner for `testpilot.mobile.v1`. Requires a connected device or emulator plus platform tooling. |
+| `api-pilot-test-mobile-runner` | `0.1.2` | Appium 3 native Android/iOS runner for `testpilot.mobile.v1`. Requires a connected device or emulator plus platform tooling. |
 
 ## API Base URL
 
@@ -130,6 +130,21 @@ Windows binaries are distributed as `.zip` files in GitHub Releases.
    .\api-pilot-test-runner.exe version
    ```
 
+### Install The TestPilot Native Mobile Runner
+
+1. Install Node.js 20 or newer plus Android SDK tooling.
+2. Download and extract [api-pilot-test-mobile-runner-0.1.2-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.1.2/api-pilot-test-mobile-runner-0.1.2-windows-amd64.zip).
+3. Keep `api-pilot-test-mobile-runner.exe` beside the extracted `worker` directory.
+4. Install the worker dependencies from PowerShell:
+
+   ```powershell
+   cd worker
+   npm ci --omit=dev
+   cd ..
+   .\api-pilot-test-mobile-runner.exe version
+   .\api-pilot-test-mobile-runner.exe doctor --json
+   ```
+
 ## Linux Manual Install
 
 Linux binaries are distributed as `.tar.gz` files in GitHub Releases.
@@ -166,6 +181,26 @@ cd ..
 ```
 
 Node.js 20 or newer is required. Keep the extracted `worker` directory adjacent to the binary.
+
+### Install The TestPilot Native Mobile Runner
+
+```bash
+curl -L -o api-pilot-test-mobile-runner-0.1.2-linux-amd64.tar.gz \
+  https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.1.2/api-pilot-test-mobile-runner-0.1.2-linux-amd64.tar.gz
+
+mkdir -p "$HOME/.local/lib/api-pilot-test-mobile-runner"
+tar -xzf api-pilot-test-mobile-runner-0.1.2-linux-amd64.tar.gz \
+  -C "$HOME/.local/lib/api-pilot-test-mobile-runner"
+chmod +x "$HOME/.local/lib/api-pilot-test-mobile-runner/api-pilot-test-mobile-runner"
+
+cd "$HOME/.local/lib/api-pilot-test-mobile-runner/worker"
+npm ci --omit=dev
+cd ..
+./api-pilot-test-mobile-runner version
+./api-pilot-test-mobile-runner doctor --json
+```
+
+Node.js 20 or newer is required. Android requires Android SDK tooling and `adb`; iOS execution requires macOS with Xcode and the XCUITest driver, so Linux installs are intended for Android targets.
 
 ## Pair A Runner
 
