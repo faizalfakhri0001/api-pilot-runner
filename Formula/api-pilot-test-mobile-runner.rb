@@ -1,14 +1,14 @@
 class ApiPilotTestMobileRunner < Formula
   desc "Local Appium 3 native mobile runner for API Pilot"
   homepage "https://github.com/faizalfakhri0001/api-pilot-runner"
-  version "0.2.5"
+  version "0.2.6"
 
   if Hardware::CPU.arm?
-    url "https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.2.5/api-pilot-test-mobile-runner-0.2.5-mac-arm64.tar.gz"
-    sha256 "af352ef1e900b67504b372b4a9c597939ab200099a844efa3015ad7aaa003bae"
+    url "https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.2.6/api-pilot-test-mobile-runner-0.2.6-mac-arm64.tar.gz"
+    sha256 "453088dc5d543167d5c257d6f560316e29c8fc9b089c1c9b3d64795153aa3311"
   else
-    url "https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.2.5/api-pilot-test-mobile-runner-0.2.5-mac-amd64.tar.gz"
-    sha256 "629c543cc252372c7d5ee83396d2a51844a2bfc47b1603295e3ab8475280c76a"
+    url "https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-mobile-runner-v0.2.6/api-pilot-test-mobile-runner-0.2.6-mac-amd64.tar.gz"
+    sha256 "2efc800278051f331f544d612db782356ae938dcd5855a80fa2ab70c09582d6c"
   end
 
   depends_on "node"
