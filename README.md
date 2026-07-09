@@ -38,7 +38,7 @@ The release workflow requires a self-hosted macOS Apple Silicon runner with the 
 | Binary | Current version | Purpose |
 | --- | --- | --- |
 | `api-pilot-runner` | `1.2.0` | Local HTTP runner with `runner.control.v2` WebSocket transport and long-poll fallback for localhost, VPN, or private-network execution. |
-| `api-pilot-test-runner` | `2.3.0` | Local browser runner with resumable `runner.control.v2`, isolated parallel suite execution, deterministic ordered results, fail-fast support, sequential fallback, and opt-in video/trace capture. Requires Node.js and Playwright browser dependencies. |
+| `api-pilot-test-runner` | `2.4.2` | Local browser runner with resumable `runner.control.v2`, isolated parallel suite execution, deterministic ordered results, fail-fast support, sequential fallback, and opt-in video/trace capture. Requires Node.js and Playwright browser dependencies. |
 | `api-pilot-test-mobile-runner` | `0.1.2` | Appium 3 native Android/iOS runner for `testpilot.mobile.v1`. Requires a connected device or emulator plus platform tooling. |
 
 ## API Base URL
@@ -147,7 +147,7 @@ Windows binaries are distributed as `.zip` files in GitHub Releases.
 ### Install The TestPilot Browser Runner
 
 1. Install Node.js 20 or newer.
-2. Download and extract [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-windows-amd64.zip).
+2. Download and extract [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.4.2/api-pilot-test-runner-windows-amd64.zip).
 3. Keep `api-pilot-test-runner.exe` beside the extracted `worker` directory.
 4. Install the worker dependencies from PowerShell:
 
@@ -195,7 +195,7 @@ api-pilot-runner version
 
 ```bash
 curl -L -o api-pilot-test-runner-linux-amd64.tar.gz \
-  https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-linux-amd64.tar.gz
+  https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.4.2/api-pilot-test-runner-linux-amd64.tar.gz
 
 mkdir -p "$HOME/.local/lib/api-pilot-test-runner"
 tar -xzf api-pilot-test-runner-linux-amd64.tar.gz \
@@ -376,14 +376,14 @@ Use a local runner for:
 | Windows x64 | [api-pilot-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.2.0/api-pilot-runner-windows-amd64.zip) |
 | Linux x64 | [api-pilot-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-runner-v1.2.0/api-pilot-runner-linux-amd64.tar.gz) |
 
-### `api-pilot-test-runner-v2.3.0`
+### `api-pilot-test-runner-v2.4.2`
 
 | Platform | Asset |
 | --- | --- |
-| macOS Apple Silicon | [api-pilot-test-runner-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-mac-arm64.tar.gz) |
-| macOS Intel | [api-pilot-test-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-mac-amd64.tar.gz) |
-| Windows x64 | [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-windows-amd64.zip) |
-| Linux x64 | [api-pilot-test-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.3.0/api-pilot-test-runner-linux-amd64.tar.gz) |
+| macOS Apple Silicon | [api-pilot-test-runner-mac-arm64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.4.2/api-pilot-test-runner-mac-arm64.tar.gz) |
+| macOS Intel | [api-pilot-test-runner-mac-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.4.2/api-pilot-test-runner-mac-amd64.tar.gz) |
+| Windows x64 | [api-pilot-test-runner-windows-amd64.zip](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.4.2/api-pilot-test-runner-windows-amd64.zip) |
+| Linux x64 | [api-pilot-test-runner-linux-amd64.tar.gz](https://github.com/faizalfakhri0001/api-pilot-runner/releases/download/api-pilot-test-runner-v2.4.2/api-pilot-test-runner-linux-amd64.tar.gz) |
 
 ### `api-pilot-test-mobile-runner-v0.1.0`
 

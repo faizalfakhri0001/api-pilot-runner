@@ -15,7 +15,7 @@ permissions:
   artifact-metadata: write
 
 concurrency:
-  group: api-pilot-runner-desktop-v1.0.2
+  group: api-pilot-runner-desktop-v1.0.3
   cancel-in-progress: false
 
 jobs:
@@ -24,9 +24,9 @@ jobs:
     runs-on: [self-hosted, macOS, ARM64, api-pilot-desktop-release-macos-arm64]
     timeout-minutes: 180
     env:
-      RELEASE_TAG: api-pilot-runner-desktop-v1.0.2
-      RELEASE_NAME: api-pilot-runner-desktop-v1.0.2
-      DESKTOP_VERSION: "1.0.2"
+      RELEASE_TAG: api-pilot-runner-desktop-v1.0.3
+      RELEASE_NAME: api-pilot-runner-desktop-v1.0.3
+      DESKTOP_VERSION: "1.0.3"
       SOURCE_REPOSITORY: faizalfakhri0001/api-pilot
       API_PILOT_COMPONENT_PRIVATE_KEY_PEM: ${{ secrets.API_PILOT_COMPONENT_PRIVATE_KEY_PEM }}
       API_PILOT_COMPONENT_PUBLIC_KEY: ${{ secrets.API_PILOT_COMPONENT_PUBLIC_KEY }}
