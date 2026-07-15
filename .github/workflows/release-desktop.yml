@@ -158,27 +158,27 @@ jobs:
         run: |
           set -euo pipefail
           (cd source/desktop && npm test)
-          (cd source/desktop && npm run build)
+          (cd source && node desktop/scripts/cli.mjs build current --mode release --flavor local --unsigned)
           cargo test --locked --manifest-path source/desktop/src-tauri/Cargo.toml
           (cd source/backend && go test ./cmd/runner ./cmd/test-runner ./cmd/test-mobile-runner ./internal/runnercontrol)
 
       - name: Build macOS DMG
         working-directory: source
-        run: make desktop-dmg
+        run: node desktop/scripts/cli.mjs package macos --mode release --flavor local --unsigned --format dmg
       - name: Verify macOS unsigned package
         working-directory: source
         run: node desktop/scripts/cli.mjs verify macos --mode release --flavor local --unsigned --format dmg
 
       - name: Build Windows NSIS installer
         working-directory: source
-        run: make desktop-exe
+        run: node desktop/scripts/cli.mjs package windows --mode release --flavor local --unsigned --format nsis
       - name: Verify Windows unsigned package
         working-directory: source
         run: node desktop/scripts/cli.mjs verify windows --mode release --flavor local --unsigned --format nsis
 
       - name: Build Linux Debian package
         working-directory: source
-        run: make desktop-deb
+        run: node desktop/scripts/cli.mjs package linux --mode release --flavor local --unsigned --format deb
       - name: Verify Linux unsigned package
         working-directory: source
         run: node desktop/scripts/cli.mjs verify linux --mode release --flavor local --unsigned --format deb
