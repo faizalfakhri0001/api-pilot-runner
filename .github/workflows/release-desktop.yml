@@ -15,7 +15,7 @@ permissions:
   artifact-metadata: write
 
 concurrency:
-  group: api-pilot-runner-desktop-v1.1.1
+  group: api-pilot-runner-desktop-v1.2.0
   cancel-in-progress: false
 
 jobs:
@@ -24,9 +24,9 @@ jobs:
     runs-on: [self-hosted, macOS, ARM64, api-pilot-desktop-release-macos-arm64]
     timeout-minutes: 180
     env:
-      RELEASE_TAG: api-pilot-runner-desktop-v1.1.1
-      RELEASE_NAME: api-pilot-runner-desktop-v1.1.1
-      DESKTOP_VERSION: "1.1.1"
+      RELEASE_TAG: api-pilot-runner-desktop-v1.2.0
+      RELEASE_NAME: api-pilot-runner-desktop-v1.2.0
+      DESKTOP_VERSION: "1.2.0"
       SOURCE_REPOSITORY: faizalfakhri0001/antasend
       GH_TOKEN: ${{ github.token }}
 
